@@ -10,7 +10,6 @@ export class CinemaService {
   movie4: Movie;
   movie5: Movie;
 
-
   constructor() {
     this.movie1 = new Movie();
     this.movie1.id = 1;
@@ -71,13 +70,18 @@ export class CinemaService {
     this.movie5.actors = ["Liam Neeson", "Ben Kingsley", "Ralph Fiennes", "Caroline Goodall", "Jonathan Sagall", "Embeth Davidtz"];
     this.movie5.hours = ["Friday 19:30", "22:30"];
     this.movie5.room = 5;
+
+    this.movies = [this.movie1, this.movie2, this.movie3, this.movie4, this.movie5];
   }
 
   getMovies() {
-
+    return this.movies;
   }
-  getMovie(id) {
 
+  getMovie(id) {
+    return this.movies.filter((item) => {
+      return item.id === id;
+    })
   }
 
 }
