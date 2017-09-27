@@ -10,14 +10,20 @@ import { Movie } from '../../models/movie';
   styleUrls: ['./my-movies.component.css']
 })
 export class MyMoviesComponent implements OnInit {
-  movieId: string;
+  movieId: number;
+  movie: Movie[];
+  newCinemaService: CinemaService;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.newCinemaService = new CinemaService;
     this.route.params.subscribe((params) => {
     this.movieId = params['id'];
+    this.movie = this.newCinemaService.getMovie(this.movieId);
     });
+
   }
 
 }

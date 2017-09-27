@@ -1,4 +1,11 @@
 <div>
-  <h3>ROOM {{movieId}}</h3>
-  <img src="{{movieId.poster}}" alt="{{movieId.title}}">
+  <h3>ROOM {{movie[0].id}}</h3>
+  <p>{{movie[0].title}}</p>
+  <img src="{{movie[0].poster}}" alt="{{movie[0].title}}">
+  <p>Synopsis: {{movie[0].synopsis}}</p>
+  <p>Genres: {{movie[0].genres}}</p>
+  <p>Year: {{movie[0].year}}</p>
+  <p>Director: {{movie[0].director}}</p>
+  <p>Actor: {{movie[0].actors}}</p>
+  <p>Hours: {{movie[0].hours}}</p>
 </div>
