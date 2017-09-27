@@ -74,7 +74,7 @@ export class CinemaService {
     this.movies = [this.movie1, this.movie2, this.movie3, this.movie4, this.movie5];
   }
 
-  getMovies() {
+  getMovies(): Movie[] {
     return this.movies;
   }
 
