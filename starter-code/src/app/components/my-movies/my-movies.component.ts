@@ -12,13 +12,13 @@ import { Movie } from '../../models/movie';
 export class MyMoviesComponent implements OnInit {
   movieId: number;
   movie: Movie[];
-  newCinemaService: CinemaService;
 
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(
+    private newCinemaService: CinemaService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.newCinemaService = new CinemaService;
     this.route.params.subscribe((params) => {
     this.movieId = params['id'];
     this.movie = this.newCinemaService.getMovie(this.movieId);
